@@ -1,0 +1,39 @@
+# Extrait GitHub Actions — a merger dans ton .github/workflows/ci.yml
+#
+# Deux jobs :
+#   - log-main : sur push main, trace le ratio dans les logs pour historique
+#   - check-pr : sur PR, bloque si le ratio regresse
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  glue-ratio-log:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Log glue ratio
+        run: bash scripts/glue-ratio.sh
+
+  glue-ratio-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # fetch-depth: 0 et la ref de base sont necessaires pour
+          # que glue-ratio-check.sh puisse extraire lib/ de origin/main
+          fetch-depth: 0
+      - name: Fetch base ref
+        run: git fetch origin main --depth=1
+      - name: Check no regression
+        env:
+          TOLERANCE: "0"
+          BASE_REF: "origin/main"
+        run: bash scripts/glue-ratio-check.sh

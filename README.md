@@ -11,6 +11,7 @@ Rembrandt est le nom de code d'un ERP vertical codé seul avec Claude Code pour 
 | [`valorisation/`](./valorisation) | *« Pourquoi j'ai codé un module qui me dit combien vaut mon ERP »* | Pattern `consolidate(dims)` + garde-fou Slack sur compteur LOC |
 | [`inscriptions-places/`](./inscriptions-places) | *« Modéliser 1 inscription = N places : quand le nom d'une table ment »* | 3 requêtes SQL + schema minimal contact × cours |
 | [`claude-md/`](./claude-md) | *« Mon CLAUDE.md pour un ERP : structure et évolution en 4 semaines »* | Template à 4 couches (CLAUDE.md, AGENTS.md, règles verticales, skill) |
+| [`glue-ratio/`](./glue-ratio) | *« Le ratio glue/logique : la CI qui bloque l'alourdissement silencieux »* | Script de mesure + CI de non-régression + workflow GitHub Actions |
 
 ## Comment lire ce repo
 
