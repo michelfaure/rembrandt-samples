@@ -1,0 +1,35 @@
+@AGENTS.md
+
+# <Nom du projet> — Instructions Claude
+
+## Stack
+- <Framework> <version précise> (conventions par défaut : lister celles qui pèsent sur le code)
+- <DB> (pas d'ORM / ORM X)
+- TypeScript strict, <CSS>
+- Auth : <schéma auth + où la vérification se fait>
+
+## Commandes
+- Dev : `<commande>`
+- Build : `<commande>`
+- Type check : `<commande>`
+
+## Conventions
+- <Convention transversale 1 — écrire au positif quand c'est court et sans ambiguïté>
+- <Convention transversale 2 — écrire à la négative quand elle encode un incident>
+- <Règle d'usage d'un client / lib dont le mauvais choix a déjà crashé>
+
+## Architecture modules
+- `/app/<module-1>/` — <rôle une ligne>
+- `/app/<module-2>/` — <rôle une ligne>
+- `/lib/` — <helpers partagés>
+
+## Règles verticales
+Les règles d'un module lourd sont dans `.claude/rules/<module>.md`. Elles ne sont
+chargées que si une tâche touche ce module.
+
+## Ne pas toucher sans validation humaine
+- `.env.local`
+- `lib/<fichier-sensible>.ts`
+- Policies / migrations existantes
+- `/api/cron/` (jobs planifiés)
+- Tables critiques : <liste>

@@ -1,0 +1,26 @@
+# Module <Nom> — règles verticales
+
+Source de vérité : <référence humaine ou dossier de specs>.
+
+## Règles critiques
+
+1. **<Règle 1>** — <explication en une phrase dense, avec l'incident si possible>
+2. **<Règle 2>** — <explication>
+3. **<Règle négative exemple>** — ne jamais X, parce que Y a crashé le DATE (numéro d'erreur / fichier).
+
+## Architecture interne
+
+- <Table ou concept 1> — <rôle>
+- <Vue matérialisée / cache> — <à rafraîchir quand>
+
+## Pièges connus
+
+- <Piège 1 avec cause et contournement>
+- <Piège 2>
+
+## Sources de données
+
+| Source | Usage |
+|---|---|
+| <API / table> | <ce qu'on en tire> |
+| <Sheet / Airtable> | <ce qu'on en tire> |
