@@ -12,6 +12,7 @@ Rembrandt is the codename of a vertical ERP coded solo with Claude Code for a ce
 | [`inscriptions-places/`](./inscriptions-places) | *1 enrollment = N seats: when a table name lies* | 3 SQL queries + minimal contact × course schema |
 | [`claude-md/`](./claude-md) | *My CLAUDE.md for an ERP: structure and 4-week evolution* | 4-layer template (CLAUDE.md, AGENTS.md, vertical rules, skill) |
 | [`glue-ratio/`](./glue-ratio) | *The glue/business ratio: a CI gate against silent code bloat* | Measurement script + non-regression CI + GitHub Actions workflow |
+| [`live-snapshot-cache/`](./live-snapshot-cache) | *Live, Snapshot, Cache: the three-way decision before storing a derived value* | Decision checklist + 4 SQL patterns (Live view, Snapshot protection, Cache trigger, category migration) |
 
 ## How to read this repo
 
