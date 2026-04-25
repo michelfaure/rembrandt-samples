@@ -1,24 +1,24 @@
 # rembrandt-samples
 
-Snippets extraits de la série d'articles **« Mon ERP avec Claude Code »** publiée sur DEV.to par [@michelfaure](https://dev.to/michelfaure).
+Snippets pulled from the article series **"My ERP with Claude Code"** published on DEV.to by [@michelfaure](https://dev.to/michelfaure).
 
-Rembrandt est le nom de code d'un ERP vertical codé seul avec Claude Code pour une école d'art céramique (six sites, quelques centaines d'élèves). Ce repo n'est pas le code de Rembrandt. C'est une sélection de patterns reproductibles, pseudonymisés et dé-contextualisés, directement copiables dans ton propre projet.
+Rembrandt is the codename of a vertical ERP coded solo with Claude Code for a ceramic art school (six locations, a few hundred students). This repo is not the Rembrandt codebase. It's a curated set of reproducible patterns, pseudonymized and de-contextualized, ready to drop into your own project.
 
-## Contenu
+## Contents
 
-| Dossier | Article DEV.to | Ce que tu trouves |
+| Folder | DEV.to article | What you'll find |
 |---|---|---|
-| [`valorisation/`](./valorisation) | *« Pourquoi j'ai codé un module qui me dit combien vaut mon ERP »* | Pattern `consolidate(dims)` + garde-fou Slack sur compteur LOC |
-| [`inscriptions-places/`](./inscriptions-places) | *« Modéliser 1 inscription = N places : quand le nom d'une table ment »* | 3 requêtes SQL + schema minimal contact × cours |
-| [`claude-md/`](./claude-md) | *« Mon CLAUDE.md pour un ERP : structure et évolution en 4 semaines »* | Template à 4 couches (CLAUDE.md, AGENTS.md, règles verticales, skill) |
-| [`glue-ratio/`](./glue-ratio) | *« Le ratio glue/logique : la CI qui bloque l'alourdissement silencieux »* | Script de mesure + CI de non-régression + workflow GitHub Actions |
+| [`valorisation/`](./valorisation) | *How much are 91,000 lines produced with Claude Code actually worth?* | `consolidate(dims)` pattern + Slack guardrail on a LOC counter |
+| [`inscriptions-places/`](./inscriptions-places) | *1 enrollment = N seats: when a table name lies* | 3 SQL queries + minimal contact × course schema |
+| [`claude-md/`](./claude-md) | *My CLAUDE.md for an ERP: structure and 4-week evolution* | 4-layer template (CLAUDE.md, AGENTS.md, vertical rules, skill) |
+| [`glue-ratio/`](./glue-ratio) | *The glue/business ratio: a CI gate against silent code bloat* | Measurement script + non-regression CI + GitHub Actions workflow |
 
-## Comment lire ce repo
+## How to read this repo
 
-Chaque dossier porte un `README.md` qui pointe vers l'article source, cadre la règle d'invariant, et explique ce que chaque fichier illustre. Les extraits TypeScript/SQL/Markdown sont pensés pour être copiés, pas exécutés tels quels — ce repo n'a pas de runtime, pas de package.json, pas de tests.
+Each folder ships a `README.md` that points to the source article, frames the invariant rule, and explains what each file illustrates. The TypeScript/SQL/Markdown excerpts are meant to be copied, not run as-is — there's no runtime, no package.json, no tests in this repo.
 
-Si tu veux comprendre le raisonnement derrière un snippet, lis l'article d'abord. Si tu veux juste le code, viens ici.
+If you want to understand the reasoning behind a snippet, read the article first. If you just want the code, come here.
 
-## Licence
+## License
 
-[MIT](./LICENSE) — fais-en ce que tu veux, cite si ça te rend service.
+[MIT](./LICENSE) — do whatever you want with it, credit if it helps you.

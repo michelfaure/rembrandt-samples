@@ -1,27 +1,27 @@
--- Les 3 requêtes qui traduisent l'invariant "1 inscription commerciale = N places cours".
--- À copier-coller dans tout schema où une table à clé composite stocke des relations
--- plutôt que des entités.
+-- The 3 queries that translate the invariant "1 commercial enrollment = N course seats".
+-- Drop them into any schema where a composite-key table stores relations
+-- rather than entities.
 
 -- ----------------------------------------------------------------------------
--- 1. Compter des personnes distinctes, jamais des lignes.
--- COUNT(*) compte les places. COUNT(DISTINCT contact_id) compte les élèves.
+-- 1. Count distinct people, never rows.
+-- COUNT(*) counts seats. COUNT(DISTINCT contact_id) counts students.
 -- ----------------------------------------------------------------------------
 SELECT COUNT(DISTINCT contact_id) AS eleves
 FROM inscriptions;
 
 -- ----------------------------------------------------------------------------
--- 2. Compter des places dans un cours donné.
--- Ici COUNT(*) est correct puisque le filtre cours_id = $1 garantit
--- qu'aucun contact n'est compté deux fois.
+-- 2. Count seats in a given course.
+-- Here COUNT(*) is correct since the cours_id = $1 filter guarantees
+-- no contact is counted twice.
 -- ----------------------------------------------------------------------------
 SELECT COUNT(*) AS places_occupees
 FROM inscriptions
 WHERE cours_id = $1;
 
 -- ----------------------------------------------------------------------------
--- 3. Upsert multi-cours sans écraser les autres places du même contact.
--- onConflict cible la clé composite, pas contact_id seul.
--- Un contact qui s'inscrit à un 2e cours crée une 2e ligne, ne remplace rien.
+-- 3. Multi-course upsert without overwriting the contact's other seats.
+-- onConflict targets the composite key, not contact_id alone.
+-- A contact enrolling in a 2nd course creates a 2nd row, replaces nothing.
 -- ----------------------------------------------------------------------------
 INSERT INTO inscriptions (contact_id, cours_id, statut)
 VALUES ($1, $2, $3)

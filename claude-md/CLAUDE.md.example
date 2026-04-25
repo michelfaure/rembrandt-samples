@@ -1,35 +1,35 @@
 @AGENTS.md
 
-# <Nom du projet> — Instructions Claude
+# <Project name> — Claude instructions
 
 ## Stack
-- <Framework> <version précise> (conventions par défaut : lister celles qui pèsent sur le code)
-- <DB> (pas d'ORM / ORM X)
+- <Framework> <exact version> (default conventions: list those that bear on the code)
+- <DB> (no ORM / ORM X)
 - TypeScript strict, <CSS>
-- Auth : <schéma auth + où la vérification se fait>
+- Auth: <auth scheme + where the verification happens>
 
-## Commandes
-- Dev : `<commande>`
-- Build : `<commande>`
-- Type check : `<commande>`
+## Commands
+- Dev: `<command>`
+- Build: `<command>`
+- Type check: `<command>`
 
 ## Conventions
-- <Convention transversale 1 — écrire au positif quand c'est court et sans ambiguïté>
-- <Convention transversale 2 — écrire à la négative quand elle encode un incident>
-- <Règle d'usage d'un client / lib dont le mauvais choix a déjà crashé>
+- <Cross-cutting convention 1 — write positively when it's short and unambiguous>
+- <Cross-cutting convention 2 — write negatively when it encodes an incident>
+- <Usage rule for a client / lib whose wrong choice has already crashed>
 
-## Architecture modules
-- `/app/<module-1>/` — <rôle une ligne>
-- `/app/<module-2>/` — <rôle une ligne>
-- `/lib/` — <helpers partagés>
+## Module architecture
+- `/app/<module-1>/` — <one-line role>
+- `/app/<module-2>/` — <one-line role>
+- `/lib/` — <shared helpers>
 
-## Règles verticales
-Les règles d'un module lourd sont dans `.claude/rules/<module>.md`. Elles ne sont
-chargées que si une tâche touche ce module.
+## Vertical rules
+The rules of a heavy module live in `.claude/rules/<module>.md`. They are loaded
+only if a task touches that module.
 
-## Ne pas toucher sans validation humaine
+## Do not touch without human review
 - `.env.local`
-- `lib/<fichier-sensible>.ts`
-- Policies / migrations existantes
-- `/api/cron/` (jobs planifiés)
-- Tables critiques : <liste>
+- `lib/<sensitive-file>.ts`
+- Existing policies / migrations
+- `/api/cron/` (scheduled jobs)
+- Critical tables: <list>

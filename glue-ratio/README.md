@@ -1,30 +1,30 @@
 # glue-ratio/
 
-Mesurer le ratio glue / logique métier dans `lib/` et brancher une CI sur la non-régression.
+Measure the glue / business logic ratio in `lib/` and wire a CI gate against regression.
 
-**Article source** : *Le ratio glue/logique : la CI qui bloque l'alourdissement silencieux* ([DEV.to](https://dev.to/michelfaure))
+**Source article**: *The glue/business ratio: a CI gate against silent code bloat* ([DEV.to](https://dev.to/michelfaure))
 
-## Règle d'invariant
+## Invariant rule
 
-Tout ce qui n'est pas mesuré dérive. Une règle dans un fichier de contraintes est lue puis oubliée ; une métrique chiffrée qui bloque une PR est vue. Les LLM ne font pas exception — ils produisent volontiers des adapters, parce qu'un adapter est facile à générer.
+What isn't measured drifts. A rule in a constraints file is read then forgotten; a numbered metric that blocks a PR is seen. LLMs are no exception — they happily produce adapters, because adapters are easy to generate.
 
-## Fichiers
+## Files
 
-| Fichier | Rôle |
+| File | Role |
 |---|---|
-| [`glue-ratio.sh`](./glue-ratio.sh) | Script principal : deux listes en dur (glue / business), calcul du ratio global et hors-types, verdict court |
-| [`glue-ratio-check.sh`](./glue-ratio-check.sh) | Compare HEAD vs base ref (default `origin/main`), fail si régression au-delà d'une tolérance (default 0) |
-| [`ci-workflow.yml`](./ci-workflow.yml) | Extrait GitHub Actions : log sur push main, check bloquant sur PR |
+| [`glue-ratio.sh`](./glue-ratio.sh) | Main script: two hardcoded lists (glue / business), global and types-excluded ratio, short verdict |
+| [`glue-ratio-check.sh`](./glue-ratio-check.sh) | Compares HEAD vs base ref (default `origin/main`), fails on regression beyond a tolerance (default 0) |
+| [`ci-workflow.yml`](./ci-workflow.yml) | GitHub Actions excerpt: log on push to main, blocking check on PR |
 
-## Pourquoi non-régression et pas seuil absolu
+## Why non-regression and not an absolute threshold
 
-Un projet mature à 35 % de glue qui se tient peut être sain. Un projet à 18 % qui monte à 22 % en une semaine est en train de dériver. Le seuil absolu ne voit pas la dérive, il ne voit que l'arrivée. La non-régression voit la dérive dès la première PR.
+A mature project at 35% glue that holds steady can be healthy. A project at 18% climbing to 22% in a week is drifting. An absolute threshold doesn't see the drift, it only sees the arrival. Non-regression sees the drift on the very first PR.
 
-Filet secondaire à 40 % : au-delà, alerte textuelle. C'est un garde-fou pour les cas pathologiques, pas la métrique principale.
+Secondary safety net at 40%: above that, a textual alert. It's a guardrail for pathological cases, not the main metric.
 
-## Comment l'adapter
+## How to adapt it
 
-- Recopier `glue-ratio.sh`, vider les deux listes, remplir avec tes propres fichiers
-- Exclure les fichiers auto-générés (types ORM, schemas générés) du dénominateur
-- Ajouter le workflow CI, tolérance 0 pour démarrer
-- Observer 2-3 semaines pour voir où la régression vient en pratique avant de durcir
+- Copy `glue-ratio.sh`, empty both lists, fill them with your own files
+- Exclude auto-generated files (ORM types, generated schemas) from the denominator
+- Add the CI workflow, tolerance 0 to start
+- Watch for 2-3 weeks to see where regression actually comes from in practice before tightening

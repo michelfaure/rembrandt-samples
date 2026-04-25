@@ -1,33 +1,33 @@
 # inscriptions-places/
 
-Extraits de la modélisation contact × cours d'un ERP d'école.
+Excerpts from the contact × course modeling of a school ERP.
 
-**Article source** : *Modéliser 1 inscription = N places : quand le nom d'une table ment* ([DEV.to](https://dev.to/michelfaure))
+**Source article**: *1 enrollment = N seats: when a table name lies* ([DEV.to](https://dev.to/michelfaure))
 
-## Règle d'invariant
+## Invariant rule
 
-Une ligne de la table `inscriptions` représente une **place** (un contact × un cours), pas une inscription commerciale. L'inscription commerciale — le contrat annuel signé par un élève qui prend N cours — est *dérivée*, pas stockée.
+A row in the `inscriptions` table represents a **seat** (one contact × one course), not a commercial enrollment. The commercial enrollment — the annual contract signed by a student who takes N courses — is *derived*, not stored.
 
-## Fichiers
+## Files
 
-| Fichier | Rôle |
+| File | Role |
 |---|---|
-| [`queries.sql`](./queries.sql) | Les 3 requêtes qui traduisent l'invariant et arrêtent de mentir |
-| [`schema.sql`](./schema.sql) | Schéma minimal `contacts` / `cours` / `inscriptions` avec `UNIQUE (contact_id, cours_id)` |
+| [`queries.sql`](./queries.sql) | The 3 queries that translate the invariant and stop lying |
+| [`schema.sql`](./schema.sql) | Minimal `contacts` / `cours` / `inscriptions` schema with `UNIQUE (contact_id, cours_id)` |
 
-## Quand ce pattern s'applique
+## When this pattern applies
 
-Dès que tu stockes une relation N×M dont le nom métier usuel (« inscription », « commande », « réservation ») renvoie à un concept commercial unique, alors que chaque ligne représente une unité composante.
+Whenever you store an N×M relation whose usual business name ("enrollment", "order", "booking") refers to a single commercial concept, while each row represents a component unit.
 
-Le réflexe correct n'est pas de renommer la table — c'est d'**inscrire la règle d'invariant dans ton `CLAUDE.md`** pour que ni toi ni l'agent ne génériez plus une requête naïve.
+The right reflex isn't to rename the table — it's to **inscribe the invariant rule in your `CLAUDE.md`** so that neither you nor the agent generate a naive query again.
 
-## Les trois options qu'on envisage toujours (et la quatrième qui gagne)
+## The three options always considered (and the fourth that wins)
 
-| Option | Coût | Sémantique |
+| Option | Cost | Semantics |
 |---|---|---|
-| Statu quo | 0 | Piège à vie |
-| Renommer `inscriptions` → `places` | Lourd (FK, RLS, triggers, vues, code) | Propre |
-| Scinder en 2 tables | Multi-semaines | Très propre |
-| **Garder le schema, tenir l'invariant documenté** | Faible | Ambigu mais borné |
+| Status quo | 0 | Lifelong trap |
+| Rename `inscriptions` → `places` | Heavy (FK, RLS, triggers, views, code) | Clean |
+| Split into 2 tables | Multi-week | Very clean |
+| **Keep the schema, hold the documented invariant** | Low | Ambiguous but bounded |
 
-Détails du raisonnement dans l'article.
+Reasoning details in the article.

@@ -1,13 +1,13 @@
-// Pattern de consolidation multi-dimensions.
-// Somme N dimensions indépendantes, garde trace de celles utilisées,
-// accepte les null pour qu'une dimension non encore instrumentée
-// ne casse pas le calcul mais s'absente honnêtement.
+// Multi-dimension consolidation pattern.
+// Sums N independent dimensions, tracks which were used,
+// accepts null so a not-yet-instrumented dimension
+// doesn't break the calculation but bows out honestly.
 
 export type Dimension = {
   id: 'saas' | 'usage' | 'donnees' | 'strategique'
   low: number | null
   high: number | null
-  source: string        // table ou méthode d'origine
+  source: string        // origin table or method
   refreshed_at: string  // ISO date
 }
 

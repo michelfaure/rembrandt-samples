@@ -1,9 +1,9 @@
-// Garde-fou de 20 lignes sur un compteur automatique.
-// Détecte les bumps anormaux avant qu'ils soient encaissés comme progression.
-// À brancher dans un cron qui calcule déjà le snapshot du jour.
+// 20-line guardrail on an automatic counter.
+// Detects abnormal bumps before they're booked as progress.
+// Wire into a cron that already computes the daily snapshot.
 
-// Remplace `admin` par ton client Supabase/Prisma/pg.
-// Remplace `postSlack` par ton webhook (Slack, Discord, email, SMS).
+// Replace `admin` with your Supabase/Prisma/pg client.
+// Replace `postSlack` with your webhook (Slack, Discord, email, SMS).
 
 type Snapshot = { lines_total: number }
 type Loc = { lines_total: number }
@@ -32,9 +32,9 @@ export async function guardrail() {
 
   if (delta > 3 * Math.max(avg * 0.02, 500)) {
     await postSlack(
-      `:warning: bump anormal lines_total : +${delta} ` +
-      `(moyenne 7j ~${Math.round(avg * 0.02)}). ` +
-      `Vérifier avant comptabilisation valeur.`
+      `:warning: abnormal lines_total bump: +${delta} ` +
+      `(7-day average ~${Math.round(avg * 0.02)}). ` +
+      `Verify before booking value.`
     )
   }
 }

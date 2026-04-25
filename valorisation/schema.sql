@@ -1,6 +1,6 @@
--- Schéma minimal pour historiser des snapshots de valorisation.
--- snapshot_date en UNIQUE garantit un seul snapshot par jour.
--- Les colonnes low/high/dims_used reflètent la structure du pattern consolidate(dims).
+-- Minimal schema to historize valuation snapshots.
+-- snapshot_date UNIQUE guarantees a single snapshot per day.
+-- The low/high/dims_used columns mirror the structure of the consolidate(dims) pattern.
 
 CREATE TABLE valorisation_snapshots (
   id             bigserial PRIMARY KEY,
@@ -12,6 +12,6 @@ CREATE TABLE valorisation_snapshots (
   created_at     timestamptz NOT NULL DEFAULT now()
 );
 
--- Index pour les lectures "derniers N snapshots" utilisées par le garde-fou.
+-- Index for the "last N snapshots" reads used by the guardrail.
 CREATE INDEX valorisation_snapshots_date_desc_idx
   ON valorisation_snapshots (snapshot_date DESC);

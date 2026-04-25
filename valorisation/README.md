@@ -1,27 +1,27 @@
 # valorisation/
 
-Extraits du module qui estime la valeur d'un ERP interne sans prix de marché.
+Excerpts from the module that estimates the value of an internal ERP without a market price.
 
-**Article source** : *Pourquoi j'ai codé un module qui me dit combien vaut mon ERP* ([DEV.to](https://dev.to/michelfaure))
+**Source article**: *How much are 91,000 lines produced with Claude Code actually worth?* ([DEV.to](https://dev.to/michelfaure))
 
-## Règle d'invariant
+## Invariant rule
 
-Un compteur automatique qui entre dans un calcul de valeur doit avoir un veilleur. Sans veilleur, la métrique devient un oracle qui se croit sur parole.
+An automatic counter feeding into a value calculation must have a watcher. Without a watcher, the metric becomes an oracle that takes itself at its word.
 
-## Fichiers
+## Files
 
-| Fichier | Rôle |
+| File | Role |
 |---|---|
-| [`compute.ts`](./compute.ts) | Pattern `consolidate(dims)` — somme N dimensions, garde trace des dimensions utilisées, accepte les `null` |
-| [`guardrail-cron.ts`](./guardrail-cron.ts) | Garde-fou de 20 lignes qui détecte les bumps anormaux de compteur LOC et poste sur Slack |
-| [`schema.sql`](./schema.sql) | Schéma minimal `valorisation_snapshots` avec `snapshot_date UNIQUE` |
+| [`compute.ts`](./compute.ts) | `consolidate(dims)` pattern — sums N dimensions, tracks which were used, accepts `null` |
+| [`guardrail-cron.ts`](./guardrail-cron.ts) | 20-line guardrail that detects abnormal LOC counter bumps and posts to Slack |
+| [`schema.sql`](./schema.sql) | Minimal `valorisation_snapshots` schema with `snapshot_date UNIQUE` |
 
-## Comment l'adapter
+## How to adapt it
 
-- Remplace `lines_total` par ta métrique (revenus, utilisateurs, tickets résolus)
-- Ajuste le seuil `3 * Math.max(avg * 0.02, 500)` à ton ordre de grandeur
-- Branche le webhook Slack (ou Discord, ou email) sur l'événement que tu veux voir avant de l'encaisser comme progression
+- Replace `lines_total` with your own metric (revenue, users, tickets resolved)
+- Tune the threshold `3 * Math.max(avg * 0.02, 500)` to your order of magnitude
+- Wire the Slack webhook (or Discord, or email) to the event you want to see before booking it as progress
 
-## Ce que ce pattern n'est pas
+## What this pattern is not
 
-Ce n'est pas un outil de valorisation financière. C'est un instrument de jugement interne. Il fabrique une valeur opposable, pas un prix de marché.
+It's not a financial valuation tool. It's an instrument of internal judgment. It produces a defensible value, not a market price.

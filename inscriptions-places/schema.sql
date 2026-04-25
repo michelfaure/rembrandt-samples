@@ -1,15 +1,15 @@
--- Schéma minimal illustrant l'invariant "1 inscription commerciale = N places cours".
--- Les tables réelles ont beaucoup plus de colonnes. Ce qui compte ici :
---   1. UNIQUE (contact_id, cours_id) — une place par couple
---   2. FK ON DELETE CASCADE — supprimer un contact libère ses places
---   3. colonne statut au niveau place, pas au niveau contact
+-- Minimal schema illustrating the invariant "1 commercial enrollment = N course seats".
+-- The real tables have many more columns. What matters here:
+--   1. UNIQUE (contact_id, cours_id) — one seat per pair
+--   2. FK ON DELETE CASCADE — deleting a contact frees its seats
+--   3. statut column at the seat level, not the contact level
 
 CREATE TABLE contacts (
   id           bigserial PRIMARY KEY,
   nom          text NOT NULL,
   prenom       text NOT NULL,
   email        text,
-  -- code_cours agrège les codes des cours occupés (dénormalisation maintenue par trigger)
+  -- code_cours aggregates the codes of the occupied courses (denormalized, maintained by trigger)
   code_cours   text,
   created_at   timestamptz NOT NULL DEFAULT now()
 );
@@ -19,7 +19,7 @@ CREATE TABLE cours (
   code             text NOT NULL UNIQUE,
   intitule         text NOT NULL,
   places_max       integer NOT NULL DEFAULT 12,
-  -- places_inscrits dénormalisée, maintenue par trigger pour éviter un COUNT à chaque affichage
+  -- places_inscrits denormalized, maintained by trigger to avoid a COUNT on every render
   places_inscrits  integer NOT NULL DEFAULT 0
 );
 

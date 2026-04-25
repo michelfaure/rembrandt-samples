@@ -1,26 +1,26 @@
-# Module <Nom> — règles verticales
+# Module <Name> — vertical rules
 
-Source de vérité : <référence humaine ou dossier de specs>.
+Source of truth: <human reference or specs folder>.
 
-## Règles critiques
+## Critical rules
 
-1. **<Règle 1>** — <explication en une phrase dense, avec l'incident si possible>
-2. **<Règle 2>** — <explication>
-3. **<Règle négative exemple>** — ne jamais X, parce que Y a crashé le DATE (numéro d'erreur / fichier).
+1. **<Rule 1>** — <dense one-sentence explanation, with the incident if possible>
+2. **<Rule 2>** — <explanation>
+3. **<Negative rule example>** — never X, because Y crashed on DATE (error number / file).
 
-## Architecture interne
+## Internal architecture
 
-- <Table ou concept 1> — <rôle>
-- <Vue matérialisée / cache> — <à rafraîchir quand>
+- <Table or concept 1> — <role>
+- <Materialized view / cache> — <when to refresh>
 
-## Pièges connus
+## Known traps
 
-- <Piège 1 avec cause et contournement>
-- <Piège 2>
+- <Trap 1 with cause and workaround>
+- <Trap 2>
 
-## Sources de données
+## Data sources
 
 | Source | Usage |
 |---|---|
-| <API / table> | <ce qu'on en tire> |
-| <Sheet / Airtable> | <ce qu'on en tire> |
+| <API / table> | <what we pull from it> |
+| <Sheet / Airtable> | <what we pull from it> |

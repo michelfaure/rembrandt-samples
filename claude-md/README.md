@@ -1,34 +1,34 @@
 # claude-md/
 
-Template d'architecture documentaire pour piloter un projet avec Claude Code.
+Documentation architecture template for steering a project with Claude Code.
 
-**Article source** : *Mon CLAUDE.md pour un ERP : structure et évolution en 4 semaines* ([DEV.to](https://dev.to/michelfaure))
+**Source article**: *My CLAUDE.md for an ERP: structure and 4-week evolution* ([DEV.to](https://dev.to/michelfaure))
 
-## Principe
+## Principle
 
-Un `CLAUDE.md` efficace ne documente pas, il **contraint**. Chaque règle répond à une fois où l'agent s'est trompé. Écrire l'interdit avant la bonne pratique.
+An effective `CLAUDE.md` doesn't document, it **constrains**. Every rule answers a moment when the agent got it wrong. Write the prohibition before the best practice.
 
-## Structure à 4 couches
+## 4-layer structure
 
-| Couche | Fichier | Portée |
+| Layer | File | Scope |
 |---|---|---|
-| 1. Général | [`CLAUDE.md.example`](./CLAUDE.md.example) | Stack, commandes, conventions transversales, zones interdites |
-| 2. Méta-agent | [`AGENTS.md.example`](./AGENTS.md.example) | Pre-requisites que l'agent doit intérioriser avant toute tâche |
-| 3. Vertical | [`rules/module.md.example`](./rules/module.md.example) | Règles métier d'un module, chargées uniquement si pertinent |
-| 4. Skill | *(hors repo)* | Auto-invocation par périmètre, consolide les règles avec pointeurs vers incidents |
+| 1. General | [`CLAUDE.md.example`](./CLAUDE.md.example) | Stack, commands, cross-cutting conventions, no-go zones |
+| 2. Meta-agent | [`AGENTS.md.example`](./AGENTS.md.example) | Pre-requisites the agent must internalize before any task |
+| 3. Vertical | [`rules/module.md.example`](./rules/module.md.example) | Business rules of a module, loaded only when relevant |
+| 4. Skill | *(out of repo)* | Auto-invoked by scope, consolidates rules with pointers to incidents |
 
-Chaque tâche charge exactement ce dont elle a besoin. Mélanger les règles verticales dans le `CLAUDE.md` racine noierait l'agent sous du contexte non pertinent à chaque session.
+Each task loads exactly what it needs. Mixing vertical rules into the root `CLAUDE.md` would drown the agent in irrelevant context every session.
 
-## Format de règle recommandé
+## Recommended rule format
 
-> « ne jamais X, parce que Y a crashé le DATE »
+> "never X, because Y crashed on DATE"
 
-- **Portée explicite** : X est borné, pas général
-- **Incident cité** : Y est un fait, pas une opinion
-- **Date datée** : vérifiable, opposable, traçable
+- **Explicit scope**: X is bounded, not generic
+- **Cited incident**: Y is a fact, not an opinion
+- **Dated**: verifiable, defensible, traceable
 
-Une règle abstraite se dissout. Une règle tracée tient.
+An abstract rule dissolves. A traced rule holds.
 
 ## Discipline
 
-Relire son propre `CLAUDE.md` tous les 15 jours. Si une règle n'a pas été convoquée depuis un mois, soit le problème est résolu (on l'archive), soit elle est trop abstraite (on la réécrit). Un fichier qui dort n'aide pas l'agent.
+Re-read your own `CLAUDE.md` every two weeks. If a rule hasn't been invoked in a month, either the problem is solved (archive it), or it's too abstract (rewrite it). A file that sleeps doesn't help the agent.
