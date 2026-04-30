@@ -14,6 +14,9 @@ Rembrandt is the codename of a vertical ERP coded solo with Claude Code for a ce
 | [`glue-ratio/`](./glue-ratio) | *The glue/business ratio: a CI gate against silent code bloat* | Measurement script + non-regression CI + GitHub Actions workflow |
 | [`live-snapshot-cache/`](./live-snapshot-cache) | *Live, Snapshot, Cache: the three-way decision before storing a derived value* | Decision checklist + 4 SQL patterns (Live view, Snapshot protection, Cache trigger, category migration) |
 | [`rls-supabase/`](./rls-supabase) | *Supabase RLS in production: four traps that silence your queries* | Anon-surface audit + policies with USING/WITH CHECK + storage privatization + client selection + RLS-without-policies detector |
+| [`lead-pipeline/`](./lead-pipeline) | *29 Zapier + Make automations replaced in four weeks* | `runLeadPipeline` with `Promise.allSettled` + `automation_logs` schema + hub-and-spoke architecture diagram |
+| [`semantic-layer-drift/`](./semantic-layer-drift) | *Six days, six seconds: a CI test against semantic-layer drift on an AI agent* | Enum sync script + Vitest contract test + `agent_runs` schema with zero-row canary index |
+| [`lazy-sdk-proxy/`](./lazy-sdk-proxy) | *Fifteen lines of Proxy to keep an SDK from breaking my CI* | Lazy-Proxy pattern on Stripe + Twilio + Anthropic — defers the constructor credential check from build to first call |
 
 ## How to read this repo
 
