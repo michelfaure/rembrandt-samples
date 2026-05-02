@@ -1,0 +1,39 @@
+# Material verification
+
+Drop this section verbatim into the root `CLAUDE.md` of your project (or
+`AGENTS.md`, depending on which agent you use). No reasoning expected
+from the agent — it's a contract of format for every factual claim.
+
+```md
+## Material verification
+
+- Any claim of the type "build green / tests pass / CI green / drift
+  detected / contact not found / OK" must be accompanied *in the same
+  message* by the verification command and its raw output. Without that,
+  the claim has no evidentiary value.
+- Any number/count returned to a human must be verified by SQL query
+  before being relayed.
+- EXPLAIN ANALYZE on a production query: execute on the exact query the
+  application code sends (view/RPC included), not on the target table
+  in isolation. Run two consecutive runs before judging — the first
+  may be a cold start.
+- On 400/422 from an external partner (webhook, third-party API):
+  demand the RAW payload before proposing a fix. No diagnosis on
+  formatted form values.
+- `tsc --noEmit` CLI = authority, IDE panel = potentially stale. Any
+  critical IDE diagnostic appearing without obvious cause must be
+  validated by `tsc` first.
+```
+
+## Why it works
+
+The rule doesn't ask the agent to reason better — it asks the agent to
+attach material to the assertion. An assertion attached to an artefact
+the human can re-read stops being a state of mind and becomes a fact
+of the world. The friction is uniform, around thirty seconds per
+exchange, and it folds into routine after a week of practice.
+
+The rule also applies to humans relaying numbers to other humans — an
+unsourced count is just as evidentially null whether produced by an
+agent or by a colleague. The agent simply produces them at higher
+throughput, which makes the rule more visible.

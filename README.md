@@ -17,6 +17,9 @@ Rembrandt is the codename of a vertical ERP coded solo with Claude Code for a ce
 | [`lead-pipeline/`](./lead-pipeline) | *29 Zapier + Make automations replaced in four weeks* | `runLeadPipeline` with `Promise.allSettled` + `automation_logs` schema + hub-and-spoke architecture diagram |
 | [`semantic-layer-drift/`](./semantic-layer-drift) | *Six days, six seconds: a CI test against semantic-layer drift on an AI agent* | Enum sync script + Vitest contract test + `agent_runs` schema with zero-row canary index |
 | [`lazy-sdk-proxy/`](./lazy-sdk-proxy) | *Fifteen lines of Proxy to keep an SDK from breaking my CI* | Lazy-Proxy pattern on Stripe + Twilio + Anthropic — defers the constructor credential check from build to first call |
+| [`silent-failure-modes/`](./silent-failure-modes) | *Five silent failure modes I codified after 35 effective days of solo ERP coding* | Negative contract test (anti-tautology) + quarterly DB ↔ code enum audit script |
+| [`material-verification/`](./material-verification) | *Why "green build" without the raw output has zero evidentiary value* | `CLAUDE.md` evidentiality rule (5 bullets) + `verify-head-builds.sh` (stash + tsc HEAD + restore) |
+| [`counterpart-doctrine/`](./counterpart-doctrine) | *The Counterpart Doctrine: a seven-axis spec for working with an AI coding agent* | Full v0.2 doctrine + one-page ADR template + 8-anti-patterns checklist |
 
 ## How to read this repo
 
