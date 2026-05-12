@@ -23,6 +23,8 @@ Rembrandt is the codename of a vertical ERP coded solo with Claude Code for a ce
 | [`postgrest-row-cap/`](./postgrest-row-cap) | *Why your Supabase query stops at exactly 1000 rows (and never tells you)* | Buggy/fixed `.select()` pair + `no-unordered-select` ESLint rule with 5 false-positive guards + cursor pagination helper |
 | [`supabase-mutations-silent-await/`](./supabase-mutations-silent-await) | *Why your Supabase mutations lie about their errors* | Three contracts for awaited mutations (bare / destructured / `.throwOnError()`) + `no-bare-await-on-supabase-mutation` ESLint rule + `SECURITY DEFINER` transactional RPC alternative |
 | [`saas-config-platform-vs-repo/`](./saas-config-platform-vs-repo) | *The SaaS config you can't `git diff`: a 30-second audit before every `update`* | Four-step audit protocol + concrete Vercel `commandForIgnoringBuildStep` example + Supabase RLS / Auth hook drift detector |
+| [`db-audit-vs-inventory/`](./db-audit-vs-inventory) | *Why your DB audit always finds more than your inventory says* | Full Postgres block audit script (8 categories: tables, views, functions, triggers, policies, indexes, roles, columns) + migration tracker sync check |
+| [`one-day-thrown-away-rule/`](./one-day-thrown-away-rule) | *The 1-day-thrown-away rule: read the code before letting your AI write new code* | Phase 0 grep script + five-question checklist to surface existing components before asking an AI agent to write new ones |
 
 ## How to read this repo
 
