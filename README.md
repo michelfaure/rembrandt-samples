@@ -20,6 +20,9 @@ Rembrandt is the codename of a vertical ERP coded solo with Claude Code for a ce
 | [`silent-failure-modes/`](./silent-failure-modes) | *Five silent failure modes I codified after 35 effective days of solo ERP coding* | Negative contract test (anti-tautology) + quarterly DB ↔ code enum audit script |
 | [`material-verification/`](./material-verification) | *Why "green build" without the raw output has zero evidentiary value* | `CLAUDE.md` evidentiality rule (5 bullets) + `verify-head-builds.sh` (stash + tsc HEAD + restore) |
 | [`counterpart-doctrine/`](./counterpart-doctrine) | *The Counterpart Doctrine: a seven-axis spec for working with an AI coding agent* | Full v0.2 doctrine + one-page ADR template + 8-anti-patterns checklist |
+| [`postgrest-row-cap/`](./postgrest-row-cap) | *Why your Supabase query stops at exactly 1000 rows (and never tells you)* | Buggy/fixed `.select()` pair + `no-unordered-select` ESLint rule with 5 false-positive guards + cursor pagination helper |
+| [`supabase-mutations-silent-await/`](./supabase-mutations-silent-await) | *Why your Supabase mutations lie about their errors* | Three contracts for awaited mutations (bare / destructured / `.throwOnError()`) + `no-bare-await-on-supabase-mutation` ESLint rule + `SECURITY DEFINER` transactional RPC alternative |
+| [`saas-config-platform-vs-repo/`](./saas-config-platform-vs-repo) | *The SaaS config you can't `git diff`: a 30-second audit before every `update`* | Four-step audit protocol + concrete Vercel `commandForIgnoringBuildStep` example + Supabase RLS / Auth hook drift detector |
 
 ## How to read this repo
 
