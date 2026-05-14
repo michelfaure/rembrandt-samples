@@ -1,0 +1,32 @@
+{
+  "metric": "M2",
+  "repo": "/Users/pierre-benoitroux/tef-erp",
+  "window_days": 28,
+  "total_commits": 474,
+  "multi_file_commits": 128,
+  "multi_file_without_adr": 3,
+  "ratio": 2.3,
+  "ratio_unit": "%",
+  "target_doctrinal": "≤ 5 %",
+  "target_met": true,
+  "examples_without_adr": [
+    {
+      "sha": "bab42bfa",
+      "date": "2026-04-27",
+      "message": "fix(sheet-sync): prioriser code_cours_25_26 sur statut historique list",
+      "code_files": 5
+    },
+    {
+      "sha": "e315e0e9",
+      "date": "2026-04-16",
+      "message": "feat(communication): email/SMS par cours avec modale partagee, 3 point",
+      "code_files": 10
+    },
+    {
+      "sha": "b5e9a2e2",
+      "date": "2026-04-16",
+      "message": "chore: purge complete du code Mailchimp",
+      "code_files": 31
+    }
+  ]
+}

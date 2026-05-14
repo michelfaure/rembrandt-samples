@@ -1,0 +1,63 @@
+{
+  "metric": "M1",
+  "window_days": 7,
+  "feedbacks_examined": 92,
+  "sources_examined": 16,
+  "sessions_in_window": 15,
+  "recurrences_detected": 185,
+  "ratio_per_session": 12.33,
+  "target_doctrinal": "≤ 1 recurrence per session",
+  "target_met": false,
+  "top_recurrences": [
+    {
+      "feedback": "feedback_anti_drift_source_unique.md",
+      "source": "PILOTAGE-IA",
+      "hits": 50
+    },
+    {
+      "feedback": "feedback_liste_rouge_inscription_active.md",
+      "source": "sessions/2026-05-11_liste-rouge-fiche-contact.md",
+      "hits": 49
+    },
+    {
+      "feedback": "feedback_liste_rouge_never_reactivate.md",
+      "source": "sessions/2026-05-11_liste-rouge-fiche-contact.md",
+      "hits": 48
+    },
+    {
+      "feedback": "feedback_audit_db_revele_drift_doctrine.md",
+      "source": "PILOTAGE-IA",
+      "hits": 47
+    },
+    {
+      "feedback": "feedback_liste_rouge_inscription_active.md",
+      "source": "PILOTAGE-IA",
+      "hits": 40
+    },
+    {
+      "feedback": "feedback_rembrandt_source_unique_no_tiede.md",
+      "source": "PILOTAGE-IA",
+      "hits": 34
+    },
+    {
+      "feedback": "feedback_liste_rouge_never_reactivate.md",
+      "source": "PILOTAGE-IA",
+      "hits": 32
+    },
+    {
+      "feedback": "feedback_test_contrat_anti_tautologie.md",
+      "source": "PILOTAGE-IA",
+      "hits": 30
+    },
+    {
+      "feedback": "feedback_doublon_couple_vs_faux_doublon.md",
+      "source": "PILOTAGE-IA",
+      "hits": 28
+    },
+    {
+      "feedback": "feedback_liste_rouge_inscription_active.md",
+      "source": "sessions/2026-05-11_enquete_cause_racine_drift_liste_rouge.md",
+      "hits": 27
+    }
+  ]
+}

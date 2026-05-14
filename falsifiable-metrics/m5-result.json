@@ -1,0 +1,66 @@
+{
+  "metric": "M5",
+  "window_days": 7,
+  "briefs_extracted": 61,
+  "counts": {
+    "pure_command": 0,
+    "command_with_oracle": 6,
+    "question": 0,
+    "unclassified": 55
+  },
+  "total_classified": 6,
+  "unclassified_ratio_percent": 90.2,
+  "pure_command_ratio_percent": 0,
+  "target_doctrinal": "alarm > 80 %, requalification expected < 60 % sustained",
+  "target_met_alarm": true,
+  "target_met_requalification": false,
+  "note": "Heuristic classification. Unclassified ratio > 30 % suggests rules need refinement. Hand-verify a sample before publishing.",
+  "samples_per_mode": {
+    "pure_command": [],
+    "command_with_oracle": [
+      {
+        "brief": "**Mémoire feedback transversale écrite immédiatement** : le pattern « FK SET NULL + CHECK NOT NULL conditionnel » dépass",
+        "mode": "command_with_oracle"
+      },
+      {
+        "brief": "**Probe d'audit transversal SET NULL × CHECK** : tirer la requête SQL de `feedback_fk_setnull_check_notnull_silent_delet",
+        "mode": "command_with_oracle"
+      },
+      {
+        "brief": "**Le challenger a aussi cassé le narratif.** L'agent erp-tef qualifiait les 1 465 anciens orphelins de « conséquence arc",
+        "mode": "command_with_oracle"
+      },
+      {
+        "brief": "**Le challenger transforme un fix UI en chantier DB.** OBJ-2 (Funel a une inscription orpheline) a fait passer la décisi",
+        "mode": "command_with_oracle"
+      },
+      {
+        "brief": "**Audit DB élargit toujours le pattern (axe 5).** Hypothèse initiale : 2 cas (FUNEL + MUNOZ). Probe SQL en 30 secondes :",
+        "mode": "command_with_oracle"
+      }
+    ],
+    "question": [],
+    "unclassified": [
+      {
+        "brief": "**AskUserQuestion comme gate avant chaque arbitrage structurant** : choix article du jour (3 candidats), passe 3 oui/non",
+        "mode": "unclassified"
+      },
+      {
+        "brief": "**3 agents-académiques en parallèle pour passe 1** sur #38/#39/#40 puis 2 en parallèle pour #41/#42. Prompts auto-portan",
+        "mode": "unclassified"
+      },
+      {
+        "brief": "**Pipeline article → publi rodé en ~30-45 min** une fois la mécanique posée : passe 2 résolution marqueurs (Edit en bloc",
+        "mode": "unclassified"
+      },
+      {
+        "brief": "**Détection drift backlog AUTOGEN en début de session** : snapshot daté 08/05 12:04 UTC alors qu'on est le 12/05. Réflex",
+        "mode": "unclassified"
+      },
+      {
+        "brief": "**Analyse audience normalisée vues/jour avec script ad hoc + state.json comme autorité de langue**. Le premier script a ",
+        "mode": "unclassified"
+      }
+    ]
+  }
+}

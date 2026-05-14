@@ -1,0 +1,72 @@
+{
+  "metric": "M4",
+  "window_days": 60,
+  "sessions_examined": 27,
+  "sessions_with_probe": 13,
+  "probed_ratio_percent": 48.1,
+  "median_position_percentile": 34.1,
+  "note": "Position % within session log narrative, not wall-clock. Proxy for \"how early did the practitioner probe the DB.\"",
+  "estimated_median_minutes_if_120min_session": 41,
+  "target_doctrinal": "≤ 90 minutes (≈ first third of session)",
+  "target_met": true,
+  "sessions_without_probe": [
+    "2026-05-01_audit-securite-rembrandt-3-p0-archives.md",
+    "2026-05-01_chantier-15-resync-baseline.md",
+    "2026-05-01_d-32-d-33-ci-rpc-couverture.md",
+    "2026-05-02_adr0044_etape_c_tests_contrat.md",
+    "2026-05-02_d37-d38-d40-d44-d41-cluster-idempotence-outbox.md",
+    "2026-05-02_dette-bloc-p3-p2-scoring.md",
+    "2026-05-05_adr0049_outbox_post_sd.md",
+    "2026-05-06_hotfix-emargement-mobile-puis-adr0053.md",
+    "2026-05-08_d-70-trigger-sync-contact-statut.md",
+    "2026-05-11_enquete_cause_racine_drift_liste_rouge.md",
+    "2026-05-11_lot-ux-christelle-emargement-durcissement.md",
+    "2026-05-12_adr0060-suppression-atomique-planning-brouillon.md",
+    "2026-05-12_adr0062-source-unique-statuts-sd.md",
+    "2026-05-13_sd-reprogrammation.md"
+  ],
+  "earliest_probers": [
+    {
+      "file": "2026-05-12_adr0061-reassignation-formateur-creation-inline.md",
+      "position_percentile": 9.7
+    },
+    {
+      "file": "2026-05-08_adr0056-finalisation-phase5-emargement.md",
+      "position_percentile": 12.2
+    },
+    {
+      "file": "2026-05-02_sprint-adr-0048-incident-widget.md",
+      "position_percentile": 14.5
+    },
+    {
+      "file": "2026-05-01_adr0042_postgrest_default_order.md",
+      "position_percentile": 19.9
+    },
+    {
+      "file": "2026-05-05_sd-conversion-fix-sourcing-tarifs.md",
+      "position_percentile": 20.2
+    }
+  ],
+  "latest_probers": [
+    {
+      "file": "2026-05-14_elementor_cours_atelier_souhaite.md",
+      "position_percentile": 75.4
+    },
+    {
+      "file": "2026-05-14_drift-rembrandt-fix-bulk-prenoms-check-constraint.md",
+      "position_percentile": 72.9
+    },
+    {
+      "file": "2026-05-01_d-04-pennylane-pa-bloc-hardening.md",
+      "position_percentile": 72.4
+    },
+    {
+      "file": "2026-05-05_drop-places-sd-cache-fragile.md",
+      "position_percentile": 70.6
+    },
+    {
+      "file": "2026-05-11_saisie-inscriptions-stages-mdl-ete.md",
+      "position_percentile": 42.5
+    }
+  ]
+}

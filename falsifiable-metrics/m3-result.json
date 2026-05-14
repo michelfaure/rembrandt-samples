@@ -1,0 +1,64 @@
+{
+  "metric": "M3",
+  "repo": "/Users/pierre-benoitroux/tef-erp",
+  "window_days": 90,
+  "drift_adrs_found": 41,
+  "drift_adrs_with_window": 29,
+  "median_window_hours": 846.1,
+  "median_window_days": 35.3,
+  "target_doctrinal": "≤ 7 days (168 h)",
+  "target_met": false,
+  "note": "Apparition detected by `git log -S <keyword>` heuristic — approximate. Manual annotation would tighten the result.",
+  "examples": [
+    {
+      "adr": 1,
+      "title": "brevo vs mailchimp",
+      "window_days": 20.2
+    },
+    {
+      "adr": 2,
+      "title": "sentry free eu",
+      "window_days": 6.4
+    },
+    {
+      "adr": 3,
+      "title": "modele inscription places",
+      "window_days": 26.5
+    },
+    {
+      "adr": 5,
+      "title": "regime tva mixte",
+      "window_days": 24.6
+    },
+    {
+      "adr": 17,
+      "title": "source verite inscriptions",
+      "window_days": 29.2
+    },
+    {
+      "adr": 18,
+      "title": "roadmap amelioration valorisation strategique",
+      "window_days": 28.8
+    },
+    {
+      "adr": 22,
+      "title": "docs finance source verite data",
+      "window_days": 28.7
+    },
+    {
+      "adr": 24,
+      "title": "audit source unique",
+      "window_days": 35.3
+    },
+    {
+      "adr": 27,
+      "title": "materialized view v contact cours actifs",
+      "window_days": 8
+    },
+    {
+      "adr": 30,
+      "title": "caches places prises places inscrits",
+      "window_days": 34.3
+    }
+  ]
+}
